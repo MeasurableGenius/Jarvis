@@ -1,0 +1,281 @@
+/*
+Theme Name:		Jarvis
+Theme URI:		https://measurablegenius.com/
+Description: 	Jarvis by Measurable Genius
+Author: 		Measurable Genius Inc.
+Author URI:		https://measurablegenius.com/
+Template: 		Divi
+Version:		0.9.4
+License:		GNU General Public License v2
+License URI:	http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* ============================================================================= 
+  Header
+================================================================================ */
+
+#main-header {
+  background: url(../../uploads/Jarvis/img/nav-background.jpg) !important;
+}
+#main-header .nav li ul, .et-search-form, #main-header .et_mobile_menu {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../uploads/Jarvis/img/nav-background.jpg) !important;	
+}
+
+.et_header_style_left .mobile_menu_bar, .et_header_style_split .mobile_menu_bar {
+	padding: 24px 0;
+
+}
+
+/* ============================================================================= 
+  Global Modifications
+================================================================================ */
+
+/*
+------------------------
+	*
+	* MODIFICATIONS
+	* make the page full-width
+	* remove top padding from the container
+	* - set left-area to float: left always so sidebar layout works on all pages
+*/
+#main-content .container {
+  	padding-top: 0px;
+    width: 100%;
+    max-width: none;
+}
+
+#left-area {
+	float: left;
+}
+
+hr {
+	color: #eeeeee;
+}
+
+.gform_fields {
+	padding: 0 !important;
+}
+
+.entry-content ul li ul, .entry-content ol li ol, .entry-content ul li ol, .entry-content ol li ul {
+	padding: 0 0 0 23px !important;
+}
+
+/* Captions -- larger text */
+.wp-caption p.wp-caption-text {
+	font-size: 15px !important;
+}
+
+/* ============================================================================= 
+  Sidebar Modifications
+================================================================================ */
+
+/*
+------------------------
+	*
+	* MODIFICATIONS
+	* - add padding back to sidebar
+	* - add bg color to sidebar
+*/
+#sidebar {
+    padding: 40px !important;
+    background: #eee;
+}
+
+
+/* ============================================================================= 
+  Page Modifications
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - remove padding from left-area on desktop
+*/
+@media (min-width: 981px) {
+	.page #left-area {
+		padding: 0 !important;
+	}
+}
+
+/* ============================================================================= 
+  Post Modifications
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - remove padding from left-area on desktop
+*/
+.single #left-area {
+	padding: 40px 40px 0 !important;
+}
+.et_pb_post .entry-content {
+	padding: 0 0 15px;
+	max-width: 700px;
+}
+.et_post_meta_wrapper > img {
+	height: 250px;
+	width: auto;
+	padding-bottom: 15px;
+}
+.et_main_video_container {
+	width: 700px;
+	padding-bottom: 15px;
+}
+.entry-title {
+    padding-bottom: 0;
+}
+#left-area .post-meta {
+    margin-bottom: 0px;
+}
+
+/*
+#left-area ul, .comment-content ul, .entry-content ul, body.et-pb-preview #main-content .container ul {
+	padding: 15px 0 23px 2em;
+}
+.single .et_pb_post {
+	margin-bottom: 0;
+}
+*/
+
+.shorten_url {
+	margin: 15px 0;
+}
+.unbreakable_link {
+	background-color: #eeeeee;
+    opacity: 1;
+	border: 1px solid #a6a6a6;
+	font-family: courier, serif;
+	padding: 0 10px;
+}
+
+/* ============================================================================= 
+  Archive Modifications
+================================================================================ */
+.archive #left-area {
+	padding: 40px 40px 0 !important;
+}
+
+/* ============================================================================= 
+  wpDiscuz
+================================================================================ */
+#wc-comment-header {
+	max-width: none;
+	padding-left: 0;
+}
+#wc_show_hide_loggedin_username {
+	max-width: none;
+	padding: 0 0 5px;
+}
+#wpcomm {
+	max-width: none;
+	margin: 0;
+	padding-bottom: 0;
+}
+#wpcomm .wc-thread-wrapper {
+	margin-bottom: 0;
+}
+
+/* ============================================================================= 
+  BuddyPress
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - adds padding back to left-area on buddypress pages
+*/
+@media (min-width: 981px) {
+	.buddypress #left-area {
+		padding: 40px !important;
+	}
+}
+
+/* Limit Width of Images in Activity Feed */
+.activity-inner img {
+	max-width: 400px;
+	display: block;
+}
+
+/* ============================================================================= 
+  bbPress
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - adds padding back to left-area on members page
+*/
+@media (min-width: 981px) {
+	.forum-archive #left-area {
+		padding: 40px !important;
+	}
+}
+
+.bbp-replies, .bbp-topics {
+	padding: 0 !important;
+}
+#bbpress-forums div.bbp-forum-author, #bbpress-forums div.bbp-topic-author, #bbpress-forums div.bbp-reply-author {
+	width: 200px;
+}
+
+/* ============================================================================= 
+  Events Calendar
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - adds padding back to left-area on calendar page
+*/@media (min-width: 981px) {
+	.page-id-1318 #left-area, .forum-archive #left-area {
+		padding: 40px !important;
+	}
+}
+
+/* ============================================================================= 
+  LearnDash
+================================================================================ */
+
+/*
+------------------------
+	*
+ 	* APPLIES TO
+	* - Desktop
+	*
+	* MODIFICATIONS
+	* - adds padding back to left-area on My Courses
+*/@media (min-width: 981px) {
+	.page-id-1328 #left-area, .forum-archive #left-area {
+		padding: 40px !important;
+	}
+}
+
+
+/* Blog Module Height Equalizer */
+@media only screen and (min-width: 768px) {
+.blog_module_fixed_height .et_pb_post {
+min-height: 580px;
+max-height: 580px;
+}
+}

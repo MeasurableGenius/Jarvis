@@ -62,6 +62,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height );
 								} else if ( 'gallery' === $post_format ) {
 									et_pb_gallery_images();
+								} else if(get_field('lucidchart_id')) {
+									echo'<div style="width: 100%; height: 500px; margin: 10px 0; position: relative;"><iframe allowfullscreen frameborder="0" style="width:100%; height:500px" src="https://www.lucidchart.com/documents/embeddedchart/' . get_field('lucidchart_id') . '"></iframe></div>';
 								}
 							?>
 							

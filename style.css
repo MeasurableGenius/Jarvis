@@ -29,6 +29,10 @@ GitHub Theme URI:	https://github.com/MeasurableGenius/Jarvis
   Global Modifications
 ================================================================================ */
 
+h3 {
+	margin-top: 20px;
+}
+
 /*
 ------------------------
 	*
@@ -116,17 +120,13 @@ hr {
 .single #left-area {
 	padding: 40px 40px 0 !important;
 }
-.et_pb_post .entry-content {
+.et_pb_post .entry-content, .et_main_video_container {
 	padding: 0 0 15px;
 	max-width: 700px;
 }
 .et_post_meta_wrapper > img {
 	height: 250px;
 	width: auto;
-	padding-bottom: 15px;
-}
-.et_main_video_container {
-	width: 700px;
 	padding-bottom: 15px;
 }
 .entry-title {
@@ -154,6 +154,14 @@ hr {
 	border: 1px solid #a6a6a6;
 	font-family: courier, serif;
 	padding: 0 10px;
+}
+
+/* LucidChart */
+.process-lucidchart {
+	width: 100%;
+	height: 650px;
+	margin: 0 0 30px 0;
+	position: relative;
 }
 
 /* ============================================================================= 
@@ -277,4 +285,127 @@ hr {
 min-height: 580px;
 max-height: 580px;
 }
+}
+
+
+
+
+/*
+* Create Mansonory styles for archive pages
+*/
+.tax-rcno_author #left-area,
+.post-type-archive-rcno_review #left-area {
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+}
+ 
+.tax-rcno_author > a,
+.post-type-archive-rcno_review > a {
+    margin: -20px -20px 10px;
+    display: block;
+}
+ 
+.tax-rcno_author #left-area .et_pb_post,
+.post-type-archive-rcno_review #left-area .et_pb_post {
+    overflow: hidden; /* fix for Firefox */
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    width: 100%;
+    padding: 19px;
+    border: 1px solid #d8d8d8;
+    background-color: #fff;
+    word-wrap: break-word;
+    display: inline-block;
+}
+ 
+.tax-rcno_author #left-area .et_pb_post h2,
+.post-type-archive-rcno_review #left-area .et_pb_post h2 {
+    font-size: 18px;
+}
+ 
+.tax-rcno_author #left-area .et_pb_post.format-link,
+.tax-rcno_author #left-area .et_pb_post.format-quote,
+.tax-rcno_author #left-area .et_pb_post.format-audio,
+.post-type-archive-rcno_review #left-area .et_pb_post.format-link,
+.post-type-archive-rcno_review #left-area .et_pb_post.format-quote,
+.post-type-archive-rcno_review #left-area .et_pb_post.format-audio {
+    padding: 0;
+}
+ 
+.tax-rcno_author .et_pb_post .et_pb_image_container,
+.tax-rcno_author .et_pb_post .et_main_video_container,
+.tax-rcno_author .et_pb_post .et_audio_content,
+.tax-rcno_author .et_pb_post .et_pb_slider,
+.post-type-archive-rcno_review .et_pb_post .et_pb_image_container,
+.post-type-archive-rcno_review .et_pb_post .et_main_video_container,
+.post-type-archive-rcno_review .et_pb_post .et_audio_content,
+.post-type-archive-rcno_review .et_pb_post .et_pb_slider {
+    margin: -20px -20px 10px;
+}
+ 
+.tax-rcno_author .et_pb_post.format-audio .et_audio_content,
+.post-type-archive-rcno_review .et_pb_post.format-audio .et_audio_content {
+    margin: 0px -38px 0px;
+}
+ 
+.tax-rcno_author .et_pb_post .et_pb_slider .et_pb_slide,
+.post-type-archive-rcno_review .et_pb_post .et_pb_slider .et_pb_slide {
+    min-height: 180px;
+}
+ 
+.tax-rcno_author .pagination,
+.post-type-archive-rcno_review .pagination {
+    padding: 20px 0;
+}
+ 
+/*
+* Media Queries
+*/
+@media screen and (max-width: 980px) {
+    .tax-rcno_author #left-area,
+	.post-type-archive-rcno_review #left-area {
+        -moz-column-count: 2;
+            column-count: 2;
+        -moz-column-gap: 60px;
+            column-gap: 60px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .tax-rcno_author #left-area,
+	.post-type-archive-rcno_review #left-area {
+        -moz-column-count: 1;
+            column-count: 1;
+    }
+    .tax-rcno_author .et_pb_post.format-audio .et_audio_content,
+	.post-type-archive-rcno_review .et_pb_post.format-audio .et_audio_content	{
+        margin: 0;
+    }
+    .tax-rcno_author #left-area .et_pb_post.format-audio .et_audio_container .mejs-controls div.mejs-time-rail,
+    .tax-rcno_author #left-area .et_pb_post.format-audio .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-total,
+    ..post-type-archive-rcno_review #left-area .et_pb_post.format-audio .et_audio_container .mejs-controls div.mejs-time-rail,
+    ..post-type-archive-rcno_review #left-area .et_pb_post.format-audio .et_audio_container .mejs-controls .mejs-time-rail .mejs-time-total	{
+        min-width: 300px!important;
+        width: 300px!important;
+    }
+}
+
+/* Coins! */
+.coin-earnings-callout {
+	background: url("/wp-content/uploads/2018/02/diamond.png");
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: left center;
+	padding: 0 0 0 28px;
+	min-height: 26px;
+	vertical-align: middle;
+}
+
+/* WooCommerce */
+.woocommerce-product-gallery {
+	margin-bottom: 45px!important;
+}
+.product {
+	max-width: 700px!important;
 }

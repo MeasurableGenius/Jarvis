@@ -48,6 +48,64 @@ function add_my_admin_styles() {
 	echo '<style>.et_pb_page_layout_settings { display: block!important;}</style>'; 
 };
 
+
+add_filter( 'gform_pre_render_5', 'populate_posts' );
+add_filter( 'gform_pre_validation_5', 'populate_posts' );
+add_filter( 'gform_pre_submission_filter_5', 'populate_posts' );
+add_filter( 'gform_admin_pre_render_55', 'populate_posts' );
+function populate_posts( $form ) {
+ 
+    foreach ( $form['fields'] as &$field ) {
+ 
+        if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-posts' ) === false ) {
+            continue;
+        }
+ 
+        // you can add additional parameters here to alter the posts that are retrieved
+        // more info: http://codex.wordpress.org/Template_Tags/get_posts
+        $posts = get_posts( 'post_type=rcno_review&numberposts=-1&post_status=publish' );
+ 
+        $choices = array();
+ 
+        foreach ( $posts as $post ) {
+            $choices[] = array( 'text' => $post->post_title, 'value' => $post->post_title );
+        }
+ 
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $field->placeholder = 'Select a Book';
+        $field->choices = $choices;
+ 
+    }
+ 
+    return $form;
+}
+
+// Adds Modules to the Divi builder 
+function DS_Custom_Modules(){
+	if(class_exists("ET_Builder_Module")){
+		
+		// Include Modules Here
+		include("divi-modules/custom-pb-librarybooklist-module.php");
+	}
+}
+function Prep_DS_Custom_Modules(){
+	global $pagenow;
+
+	$is_admin = is_admin();
+	$action_hook = $is_admin ? 'wp_loaded' : 'wp';
+	$required_admin_pages = array( 'edit.php', 'post.php', 'post-new.php', 'admin.php', 'customize.php', 'edit-tags.php', 'admin-ajax.php', 'export.php' ); // list of admin pages where we need to load builder files
+	$specific_filter_pages = array( 'edit.php', 'admin.php', 'edit-tags.php' );
+	$is_edit_library_page = 'edit.php' === $pagenow && isset( $_GET['post_type'] ) && 'et_pb_layout' === $_GET['post_type'];
+	$is_role_editor_page = 'admin.php' === $pagenow && isset( $_GET['page'] ) && 'et_divi_role_editor' === $_GET['page'];
+	$is_import_page = 'admin.php' === $pagenow && isset( $_GET['import'] ) && 'wordpress' === $_GET['import']; 
+	$is_edit_layout_category_page = 'edit-tags.php' === $pagenow && isset( $_GET['taxonomy'] ) && 'layout_category' === $_GET['taxonomy'];
+
+	if ( ! $is_admin || ( $is_admin && in_array( $pagenow, $required_admin_pages ) && ( ! in_array( $pagenow, $specific_filter_pages ) || $is_edit_library_page || $is_role_editor_page || $is_edit_layout_category_page || $is_import_page ) ) ) {
+		add_action($action_hook, 'DS_Custom_Modules', 9789);
+	}
+}
+Prep_DS_Custom_Modules();
+
 /*
 * Creating a function to create our CPT
 */

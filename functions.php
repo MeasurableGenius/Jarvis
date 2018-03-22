@@ -370,6 +370,48 @@ function custom_post_types() {
         	'capability_type'     => 'post'
 			)
 		);
+	
+	register_post_type(
+		'campaign', array(
+			'label'               => __( 'Campaigns'),
+        	'description'         => __( 'Campaigns'),
+			'labels'              => array(
+				'name'                => _x( 'Campaign' ),
+				'singular_name'       => _x( 'Campaign' ),
+        		'menu_name'           => __( 'Campaigns' ),
+        		'all_items'           => __( 'All Campaigns' ),
+        		'view_item'           => __( 'View Campaign' ),
+        		'add_new_item'        => __( 'Add New Campaign' ),
+        		'add_new'             => __( 'Add New' ),
+        		'edit_item'           => __( 'Edit Campaign' ),
+        		'update_item'         => __( 'Update Campaign' ),
+        		'search_items'        => __( 'Search Campaign' ),
+        		'not_found'           => __( 'Not Found'),
+        		'not_found_in_trash'  => __( 'Not found in Trash')
+				),
+			// Features this CPT supports in Post Editor
+        	'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+			// You can associate this CPT with a taxonomy or custom taxonomy. 
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			/* A hierarchical CPT is like Pages and can have
+			* Parent and child items. A non-hierarchical CPT
+			* is like Posts.
+			*/ 
+			'hierarchical'        => false,
+			'public'              => true,
+        	'show_ui'             => true,
+        	'show_in_menu'        => true,
+        	'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+        	'menu_position'       => 5,
+			'menu_icon'           => 'dashicons-share',
+        	'can_export'          => true,
+        	'has_archive'         => true,
+        	'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+        	'capability_type'     => 'post'
+			)
+		);
 }
  
 /* Hook into the 'init' action so that the function
